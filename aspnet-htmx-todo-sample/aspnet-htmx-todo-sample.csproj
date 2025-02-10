@@ -1,10 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>aspnet_htmx_todo_sample</RootNamespace>
+    <RootNamespace>AspnetHtmxTodoSample</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\json-higlabo.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HigLabo.Data" Version="9.0.0" />
+    <PackageReference Include="HigLabo.Data.SqlServer" Version="9.0.0" />
+    <PackageReference Include="HigLabo.DbSharp" Version="9.0.0.1" />
+    <PackageReference Include="HigLabo.DbSharp.SqlServer" Version="9.0.0" />
+    <PackageReference Include="HigLabo.Web" Version="9.0.0" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.7.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Generated\" />
+  </ItemGroup>
 
 </Project>

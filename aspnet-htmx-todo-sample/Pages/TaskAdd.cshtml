@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "/Pages/_Layout.cshtml";
+}
+
+<div id="task-add-panel">
+    <div>Title</div>
+    <input type="text" name="Title" />
+
+    <div>優先順位</div>
+    <input type="text" name="Priority" />
+
+    <div>締め切り</div>
+    <input type="text" name="DueDate" />
+
+    <button hx-trigger="click" hx-post="/api/task/add" hx-ext="json-higlabo"
+    hx-include="#task-add-panel" hx-target="#result-message-panel" hx-swap="innerHTML">Add</button>
+
+    <div id="result-message-panel"></div>
+</div>
+
+
+
