@@ -1,5 +1,8 @@
+import { SignalR } from "./SignalR.js";
 export class App {
-    initialize() {
+    signalR = new SignalR();
+    async initialize() {
+        await this.signalR.initialize();
         const flatpickr = window["flatpickr"];
         flatpickr("[date-picker]", {
             dateFormat: "Y/m/d",
@@ -13,9 +16,9 @@ export class App {
         });
     }
 }
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener("DOMContentLoaded", async (e) => {
     const w = new App();
     window["App"] = w;
-    w.initialize();
+    await w.initialize();
 });
 //# sourceMappingURL=App.js.map

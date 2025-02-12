@@ -1,5 +1,11 @@
+import { SignalR } from "./SignalR.js";
+
 export class App {
-    public initialize() {
+    private signalR = new SignalR();
+
+    public async initialize() {
+        await this.signalR.initialize();
+
         const flatpickr = window["flatpickr"];
 
         flatpickr("[date-picker]", {
@@ -15,9 +21,9 @@ export class App {
     }
 }
 
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener("DOMContentLoaded", async(e) => {
     const w = new App();
     window["App"] = w;
-    w.initialize();
+    await w.initialize();
 });
 

@@ -6,6 +6,7 @@ using System.Reflection;
 using AspnetHtmxTodoSample.Data;
 using HigLabo.Core;
 using AspnetHtmxTodoSample.Pages.View;
+using Microsoft.AspNetCore.SignalR;
 
 namespace AspnetHtmxTodoSample.Pages;
 
@@ -112,7 +113,7 @@ public static class ApiEndpoint
         public int? Priority { get; set; }
         public DateOnly? DueDate { get; set; }
     }
-    public static async ValueTask ApiTaskAdd(HttpContext context, SqlServerDatabaseFactory databaseFactory)
+    public static async ValueTask ApiTaskAdd(HttpContext context, SqlServerDatabaseFactory databaseFactory, IHubContext<MyHub, IMyHubClient> hubContext)
     {
         var p = await context.CreateFromBody<ApiTaskAddParameter>();
 
@@ -129,6 +130,8 @@ public static class ApiEndpoint
         sp.Priority = p.Priority;
         sp.DueDate = p.DueDate;
         var result = await sp.ExecuteNonQueryAsync();
+
+        await hubContext.Clients.All.HtmxTrigger("#todo-list-container-panel", "reload");
 
         context.Response.Headers.TryAdd("HX-Redirect", "/task/list");
     }

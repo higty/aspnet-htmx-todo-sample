@@ -18,6 +18,7 @@
     <PackageReference Include="HigLabo.DbSharp" Version="9.0.0.1" />
     <PackageReference Include="HigLabo.DbSharp.SqlServer" Version="9.0.0" />
     <PackageReference Include="HigLabo.Web" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.2.0" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.7.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

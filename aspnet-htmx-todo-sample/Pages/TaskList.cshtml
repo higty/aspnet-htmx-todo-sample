@@ -13,7 +13,7 @@
             hx-include="#filter-condition-panel" hx-ext="json-higlabo"
             hx-target="#todo-list-container-panel" hx-swap="innerHTML">Load</button>
 </div>
-<div id="todo-list-container-panel" hx-trigger="load" hx-post="/view/todo-list-panel"
+<div id="todo-list-container-panel" hx-trigger="load,reload" hx-post="/view/todo-list-panel"
      hx-include="this" hx-ext="json-higlabo" 
      hx-target="#todo-list-container-panel" hx-swap="innerHTML"></div>
 
