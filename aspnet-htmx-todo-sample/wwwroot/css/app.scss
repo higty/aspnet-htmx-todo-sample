@@ -1,0 +1,32 @@
+body {
+    background-color: #e0e0ff;
+}
+
+
+.todo-record-panel {
+    border: solid 1px #cccccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 8px;
+    padding: 12px;
+
+    .priority {
+        border-radius: 100vmax;
+        background-color: #d0d0d0;
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        text-align: center;
+        padding: 8px;
+    }
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .create-time {
+        text-align: right;
+        color: #cccccc;
+    }
+}

@@ -1,0 +1,16 @@
+﻿@model AspnetHtmxTodoSample.Pages.View.TodoListPanelModel
+
+@foreach (var item in Model.TodoList)
+{
+    <div class="todo-record-panel">
+        <div>
+            <span class="priority">@item.Priority</span>
+            <a class="title" href="/task/@item.TodoId/edit">@item.Title</a>
+        </div>
+        @if (item.DueDate.HasValue)
+        {
+            <div class="due-date">締切日 @item.DueDate?.ToString("yyyy-MM-dd")</div>
+        }
+        <div class="create-time">作成時刻 @item.CreateTime.ToString("yyyy/MM/dd HH:mm")</div>
+    </div>
+}

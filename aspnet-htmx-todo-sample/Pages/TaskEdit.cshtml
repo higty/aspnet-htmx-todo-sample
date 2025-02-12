@@ -1,0 +1,29 @@
+﻿@model ApiEndpoint.TaskEditModel
+@{
+    Layout = "/Pages/_Layout.cshtml";
+}
+
+<div id="task-edit-panel">
+    @if (Model.EditMode == RecordEditMode.Edit)
+    {
+        <input type="hidden" name="TodoId" value="@Model.Record.TodoId" />
+    }
+
+    <input-field-panel text="Todo Title" name="Title" value="@Model.Record.Title"></input-field-panel>
+    <input-field-panel text="優先順位" name="Priority" value="@Model.Record.Priority"></input-field-panel>
+    <input-field-panel text="締め切り" name="DueDate" value="@Model.Record.DueDate" date-picker="true"></input-field-panel>
+
+    <button hx-trigger="click" hx-post="/api/task/@Model.EditMode.ToString().ToLower()" hx-ext="json-higlabo"
+    hx-include="#task-edit-panel" hx-target="#result-message-panel" hx-swap="innerHTML">Save</button>
+
+    @if (Model.EditMode == RecordEditMode.Edit)
+    {
+        <button hx-trigger="click" hx-post="/api/task/delete" hx-ext="json-higlabo"
+                hx-include="#task-edit-panel" hx-target="#result-message-panel" hx-swap="innerHTML">Delete</button>
+    }
+
+    <div id="result-message-panel"></div>
+</div>
+
+
+
