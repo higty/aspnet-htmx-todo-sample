@@ -17,3 +17,27 @@ Integrate TypeScript
 Calendar feature with FlatPickr
 
 Websocket communication by SignalR
+
+
+# Setup
+
+Create database by SMSS to your local pc or Azure.
+
+Create table and stored procedure to database by executing TodoTable.sql.
+
+Create config file as below.
+
+C:\DevConfig\aspnet-htmx-todo-sample.json
+
+```
+{
+  "ConnectionString": "Server=.;Database=aspnet_htmx_todo_sample;Trusted_Connection=Yes;Encrypt=True;TrustServerCertificate=True;Connection Timeout=120;"
+}
+```
+
+
+
+
+
+
+
