@@ -1,4 +1,4 @@
-# A ASP.NET+HTMX sample web app.
+# ASP.NET+HTMX sample web app.
 
 # Table of contents
 
